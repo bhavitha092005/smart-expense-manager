@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Expense Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <h2>Expense Manager Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<div class="dashboard-container">
+
+    <!-- SUMMARY -->
+    <div class="card">
+        <h3>Summary</h3>
+        <p>Total Expenses: ₹<span id="totalExpenses">0</span></p>
+        <p>Budget: ₹<span id="budgetAmount">0</span></p>
+        <p>Remaining: ₹<span id="remainingAmount">0</span></p>
+
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+    </div>
+
+    <!-- ADD EXPENSE -->
+    <div class="card">
+        <h3>Add Expense</h3>
+
+        <form id="expenseForm">
+            <input type="text" id="category" placeholder="Category" required />
+            <input type="number" id="amount" placeholder="Amount" required />
+            <input type="date" id="date" required />
+            <input type="text" id="description" placeholder="Description" />
+            <button type="submit">Add Expense</button>
+        </form>
+    </div>
+  
+	<!-- SET BUDGET -->
+	<div class="card">
+	    <h3>Set Monthly Budget</h3>
+
+	    <form id="budgetForm">
+	        <input type="number" id="budgetMonth" placeholder="Month (1-12)" required />
+	        <input type="number" id="budgetYear" placeholder="Year" required />
+	        <input type="number" id="budgetAmountInput" placeholder="Budget Amount" required />
+	        <button type="submit">Save Budget</button>
+	    </form>
+	</div>
+
+    <!-- EXPENSE LIST -->
+    <div class="card">
+        <h3>Your Expenses</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="expenseTableBody">
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script src="js/expense.js"></script>
+<script src="js/budget.js"></script>
+
+</body>
+</html>
